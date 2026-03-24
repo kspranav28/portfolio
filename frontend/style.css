@@ -16,6 +16,7 @@
 
 body {
   margin: 0;
+  padding-top: 76px;
   font-family: "Space Grotesk", sans-serif;
   color: var(--text);
   background:
@@ -54,17 +55,28 @@ body {
   background: rgba(31, 132, 127, 0.14);
 }
 
-.navbar,
 .hero-grid,
 .section-space {
   position: relative;
   z-index: 1;
 }
 
+.nav-glass {
+  background: rgba(255, 250, 242, 0.85); /* Slightly frosty color derived from background */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 1030; /* High z-index to stay above content */
+}
+
 .brand-mark {
+  font-family: "Dancing Script", cursive;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 2.4rem;
+  letter-spacing: 0.03em;
+  color: var(--accent-dark);
+  text-shadow: 1px 1px 3px rgba(148, 67, 15, 0.5);
   text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--accent-dark);
 }
 
 .nav-link {
