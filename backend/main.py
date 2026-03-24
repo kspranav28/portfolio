@@ -7,7 +7,12 @@ from pydantic import BaseModel
 import os
 
 # --- Database ---
-SQLALCHEMY_DATABASE_URL = "sqlite:///./portfolio.db"
+if "WEBSITE_SITE_NAME" in os.environ:
+    db_path = "/tmp/portfolio.db"
+else:
+    db_path = "./portfolio.db"
+
+SQLALCHEMY_DATABASE_URL = f"sqlite:///{db_path}"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
